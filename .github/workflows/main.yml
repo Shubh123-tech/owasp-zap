@@ -1,9 +1,9 @@
-name: security-scanning
+name: RayzonScan
 on:
   push:
-     branches :[master]
-   pull_request :
-     branches :[master]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,4 +11,4 @@ jobs:
       - name: owasp ZAP Scan
         uses: zaproxy/action-baseline@v0.6.1
         with:
-          target: 'https://www.zaproxy.org'
+          target: "http://testphp.vulnweb.com/"
