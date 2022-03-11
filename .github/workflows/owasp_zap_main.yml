@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+
+name: OWASP_ZAP
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Owasp zap baseline scan
+        uses: zapproxy/action-baseline@v0.6.1
+        with:
+           target: "http://testphp.vulnweb.com/"
